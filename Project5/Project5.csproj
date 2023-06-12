@@ -7,4 +7,19 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Assets\summalogo.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\summalogo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Classes\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
 </Project>

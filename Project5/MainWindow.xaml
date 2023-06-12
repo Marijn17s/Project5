@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project5"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Summa Move" MinHeight="500" MinWidth="350" Height="600" Width="1000">
     <Grid>
-
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/summalogo.jpg" Stretch="Uniform"/>
+        </Grid.Background>
     </Grid>
 </Window>
