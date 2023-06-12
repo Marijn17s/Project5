@@ -10,5 +10,37 @@
         <Grid.Background>
             <ImageBrush ImageSource="/Assets/summalogo.jpg" Stretch="Uniform"/>
         </Grid.Background>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Margin="5" Grid.Column="1">
+                <ListView HorizontalContentAlignment="Stretch" Background="Black" ItemsSource="{Binding Excercise}" SelectedItem="{Binding SelectedExcercise}" d:ItemsSource="{d:SampleData ItemCount=5}"> <!--SelectionChanged="Selector_OnSelectionChanged"-->
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="3" Height="20" VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0" VerticalAlignment="Center" Foreground="White" Text="{Binding Name}" TextWrapping="Wrap"/>
+                                <Button Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" Background="Red" Foreground="Black" Content="X" FontWeight="ExtraBold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MinHeight="20" MinWidth="20"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
