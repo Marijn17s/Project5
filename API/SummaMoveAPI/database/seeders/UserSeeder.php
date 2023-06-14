@@ -7,6 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
 {
@@ -25,6 +26,7 @@ class UserSeeder extends Seeder
             'email' => 'joris@gmail.com',
             'password' => $hashed,
             'dateofbirth' => '2004-10-05',
+            'remember_token' => Str::random(60),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
@@ -36,6 +38,7 @@ class UserSeeder extends Seeder
             'email' => 'raúl@gmail.com',
             'password' => $hashed,
             'dateofbirth' => '2000-01-06',
+            'remember_token' => Str::random(60),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
@@ -47,6 +50,7 @@ class UserSeeder extends Seeder
             'email' => 'marijn@gmail.com',
             'password' => $hashed,
             'dateofbirth' => '2003-12-04',
+            'remember_token' => Str::random(60),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);

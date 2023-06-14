@@ -7,6 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Illuminate\Testing\Fluent\Concerns\Has;
 
 class AdministratorSeeder extends Seeder
@@ -26,6 +27,7 @@ class AdministratorSeeder extends Seeder
             'email' => 'admin@example.com',
             'password' => $hashed,
             'dateofbirth' => '1992-01-01',
+            'remember_token' => Str::random(60),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
