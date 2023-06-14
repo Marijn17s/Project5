@@ -20,6 +20,8 @@
   <ItemGroup>
     <Folder Include="Classes\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Classes\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
 
 </Project>
