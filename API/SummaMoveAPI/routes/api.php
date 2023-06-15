@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ExercisesController;
 use App\Http\Controllers\ExercisesDoneController;
 use App\Http\Controllers\UsersController;
@@ -24,6 +25,9 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 Route::get('exercises', [ExercisesController::class, 'index']);
 Route::get('exercises/{id}', [ExercisesController::class, 'show']);
 
+Route::post('/register', [AuthenticationController::class, 'register']);
+Route::post('/login', [AuthenticationController::class, 'login']);
+
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('exercises', [ExercisesController::class, 'store']);
     Route::put('exercises/{id}', [ExercisesController::class, 'update']);
@@ -31,7 +35,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::get('users/{id}/exercises', [UsersController::class, 'getExercisesByUser']);
     Route::get('users/{id}', [UsersController::class, 'show']);
-    Route::post('users', [UsersController::class, 'store']);
+    //There is no post request for users, because in the register route, they will be saved in the database
     Route::put('users/{id}', [UsersController::class, 'update']);
     Route::delete('users/{id}', [UsersController::class, 'destroy']);
 

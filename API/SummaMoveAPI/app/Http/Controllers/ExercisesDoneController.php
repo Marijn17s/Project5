@@ -19,7 +19,6 @@ class ExercisesDoneController extends Controller
         $request->validate([
             'user_id' => 'required',
             'exercise_id' => 'required',
-            'count' => 1
         ]);
         ExerciseDone::create($request->all());
     }
@@ -42,7 +41,6 @@ class ExercisesDoneController extends Controller
         $request->validate([
             'user_id' => 'required',
             'exercise_id' => 'required',
-            'count' => 1
         ]);
         ExerciseDone::find($id)->update($request->all());
     }

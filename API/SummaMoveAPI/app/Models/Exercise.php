@@ -9,6 +9,6 @@ class Exercise extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['username', 'firstname', 'lastname', 'email', 'password',
-        'dateofbirth', 'remember_token', 'created_at', 'updated_at'];
+    protected $fillable = ['name', 'duration', 'description'];
+    public $timestamps = false;
 }

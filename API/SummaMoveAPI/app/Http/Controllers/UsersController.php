@@ -20,26 +20,6 @@ class UsersController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        $request->remember_token = Str::random(60);
-        $request->created_at = Carbon::now();
-        $request->updated_at = Carbon::now();
-
-        $request->validate([
-            'username' => 'required|max:80',
-            'firstname' => 'required|max:50',
-            'lastname' => 'required|max:60',
-            'email' => 'required|max:90',
-            'password' => 'required|max:255',
-            'dateofbirth' => 'required',
-        ]);
-        User::create($request->all());
-    }
-
-    /**
      * Display the specified resource.
      */
     public function show(string $id)

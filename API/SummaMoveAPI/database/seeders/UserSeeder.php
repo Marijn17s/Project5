@@ -17,14 +17,13 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $password = 'geheim';
-        $hashed = Hash::make($password);
 
         DB::table('users')->insert([
             'username' => 'JorisWulms',
             'firstname' => 'Joris',
             'lastname' => 'Wulms',
             'email' => 'joris@gmail.com',
-            'password' => $hashed,
+            'password' => Hash::make($password),
             'dateofbirth' => '2004-10-05',
             'remember_token' => Str::random(60),
             'created_at' => Carbon::now(),
@@ -36,7 +35,7 @@ class UserSeeder extends Seeder
             'firstname' => 'Raúl',
             'lastname' => 'van der Zande',
             'email' => 'raúl@gmail.com',
-            'password' => $hashed,
+            'password' => Hash::make($password),
             'dateofbirth' => '2000-01-06',
             'remember_token' => Str::random(60),
             'created_at' => Carbon::now(),
@@ -48,7 +47,7 @@ class UserSeeder extends Seeder
             'firstname' => 'Marijn',
             'lastname' => 'Slaats',
             'email' => 'marijn@gmail.com',
-            'password' => $hashed,
+            'password' => Hash::make($password),
             'dateofbirth' => '2003-12-04',
             'remember_token' => Str::random(60),
             'created_at' => Carbon::now(),
